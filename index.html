@@ -1,109 +1,176 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Resume</title>
+    <title>رزومه من</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #003366; /* رنگ پس‌زمینه آبی پررنگ */
+            background-color: #003366;
             color: #fff;
         }
         header {
             background: #333;
             color: #fff;
-            padding: 10px 0;
-            text-align: center;
-        }
-        section {
-            padding: 20px;
-            margin: 10px;
-            background: #fff;
-            color: #333;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        h1, h2 {
-            color: #333;
+            padding: 20px 0;
+            text-align: right;
+            border-bottom: 2px solid #fff;
+            position: relative;
         }
         .container {
             max-width: 800px;
             margin: auto;
+            padding: 20px;
+            background-color: #004080;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         }
         footer {
             text-align: center;
             padding: 10px;
             background: #333;
             color: #fff;
-            position: relative;
-            bottom: 0;
-            width: 100%;
         }
         img {
-            max-width: 100%;
+            max-width: 100px;
             height: auto;
-            border-radius: 50%; /* دایره‌ای کردن عکس */
+            border-radius: 50%;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+        h1, h2 {
+            color: #fff;
+            margin-top: 0;
+        }
+        nav {
+            margin: 20px 0;
+            display: flex;
+            justify-content: flex-end;
+        }
+        nav a {
+            color: #fff;
+            margin: 0 5px;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        nav a:hover {
+            background: #00509e;
+            transform: scale(1.1);
+            transition: transform 0.3s, background 0.3s;
+        }
+        .tab-content {
+            display: none;
+            padding: 15px;
+            border-radius: 5px;
+            background-color: #00509e;
+            margin-top: 10px;
+        }
+        .active {
+            display: block;
         }
         @media (max-width: 600px) {
             body {
                 padding: 10px;
             }
-            section {
-                margin: 5px;
-                padding: 15px;
+            .container {
+                padding: 10px;
             }
         }
     </style>
+    <script>
+        function showTab(tabName) {
+            const tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(tab => {
+                tab.classList.remove('active');
+            });
+            document.getElementById(tabName).classList.add('active');
+        }
+    </script>
 </head>
 <body>
     <header>
-        <h1>Your Name</h1>
-        <p>Your Job Title</p>
+        <h1>مائده اقارب پرست</h1>
+        <img src="C:/Users/User/Desktop/InShot_۲۰۲۴۰۸۲۹_۱۴۴۱۴۲۰۶۰.jpg" alt="عکس من">
+        <p>برنامه نویس پایتون</p>
+        <nav>
+            <a href="javascript:void(0)" onclick="showTab('about')"><i class="fas fa-user"></i> معرفی</a>
+            <a href="javascript:void(0)" onclick="showTab('projects')"><i class="fas fa-briefcase"></i> نمونه کار</a>
+            <a href="javascript:void(0)" onclick="showTab('skills')"><i class="fas fa-cogs"></i> مهارت‌ها</a>
+            <a href="javascript:void(0)" onclick="showTab('contact')"><i class="fas fa-envelope"></i> ارتباط با من</a>
+        </nav>
     </header>
 
     <div class="container">
-        <img src="your-image-url.jpg" alt="A hijab-wearing woman" />
+        <div id="about" class="tab-content active">
+            <h2><i class="fas fa-user"></i> معرفی</h2>
+            <p>من مائده اقارب پرست هستم و متولد سال 1359 هستم. از دوران کودکی به برنامه‌نویسی علاقه‌مند شدم و اکنون به عنوان یک برنامه‌نویس پایتون فعالیت می‌کنم. در طول سال‌ها تجربه‌های زیادی در پروژه‌های مختلف کسب کرده‌ام و همواره به یادگیری و بهبود مهارت‌هایم ادامه می‌دهم.</p>
+        </div>
 
-        <section>
-            <h2>About Me</h2>
-            <p>Write a brief introduction about yourself.</p>
-        </section>
-
-        <section>
-            <h2>Resume</h2>
-            <h3>Education</h3>
-            <p>Your education details.</p>
-            <h3>Work Experience</h3>
-            <p>Your work experiences.</p>
-        </section>
-
-        <section>
-            <h2>Skills</h2>
+        <div id="projects" class="tab-content">
+            <h2><i class="fas fa-briefcase"></i> پروژه‌ها</h2>
             <ul>
-                <li>Skill 1</li>
-                <li>Skill 2</li>
-                <li>Skill 3</li>
-                <li>Skill 4</li>
+                <li>
+                    <a href="https://colab.research.google.com/drive/1CnsX3cyNSU63ts821BQa29KdKGyStx4l" target="_blank">پروژه ۱: ورودی عدد ۴۲</a>
+                </li>
+                <li>
+                    <a href="https://colab.research.google.com/drive/1CnsX3cyNSU63ts821BQa29KdKGyStx4l" target="_blank">پروژه ۲: تحلیل داده‌ها</a>
+                </li>
+                <li>
+                    <a href="https://colab.research.google.com/drive/1CnsX3cyNSU63ts821BQa29KdKGyStx4l" target="_blank">پروژه ۳: مدل یادگیری ماشین</a>
+                </li>
             </ul>
-        </section>
+        </div>
 
-        <section>
-            <h2>پروژه‌ها</h2>
-            <p>ایا ورودی عدد 42 هست؟</p>
-            <a href="https://colab.research.google.com/drive/1CnsX3cyNSU63ts821BQa29KdKGyStx4l">لینک به پروژه درب</a>
-        </section>
+        <div id="skills" class="tab-content">
+            <h2><i class="fas fa-cogs"></i> مهارت‌ها</h2>
+            <table>
+                <tr>
+                    <th>مهارت</th>
+                    <th>سطح تسلط</th>
+                </tr>
+                <tr>
+                    <td>Python</td>
+                    <td>متوسط</td>
+                </tr>
+                <tr>
+                    <td>C و C++</td>
+                    <td>متوسط</td>
+                </tr>
+                <tr>
+                    <td>Flask و Kivy</td>
+                    <td>کم</td>
+                </tr>
+                <tr>
+                    <td>SQL</td>
+                    <td>متوسط</td>
+                </tr>
+                <tr>
+                    <td>Git و GitHub</td>
+                    <td>کم</td>
+                </tr>
+                <tr>
+                    <td>Google Colab</td>
+                    <td>کم</td>
+                </tr>
+            </table>
+        </div>
 
-        <section>
-            <h2>Contact</h2>
-            <p>Email: m.aghareb92@gmail.com</p>
-        </section>
+        <div id="contact" class="tab-content">
+            <h2><i class="fas fa-envelope"></i> ارتباط با من</h2>
+            <p>ایمیل: m.aghareb92@gmail.com</p>
+            <p><a href="https://maghareb.com" style="color: #fff;">لینک به Maghareb</a></p>
+        </div>
     </div>
 
     <footer>
-        <p>Copyright © 2023 Your Name</p>
+        <p>۲۰۲۴ مائده اقارب پرست</p>
     </footer>
 </body>
 </html>
